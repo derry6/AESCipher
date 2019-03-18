@@ -492,7 +492,7 @@ int AESModeOfOperation::Decrypt(unsigned char *_in, int _length, unsigned char *
 		memset(ciphertext, 0, 16);
 		memcpy(ciphertext, _in + start, end - start);
 		if ( m_mode == MODE_CFB ) {
-			if (first_round = true) {
+			if (first_round == true) {
 				m_aes->Cipher(m_iv, output);
 				first_round = false;
 			} else {
